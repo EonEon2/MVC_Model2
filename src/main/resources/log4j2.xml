@@ -1,0 +1,24 @@
+<configuration status="error">
+
+    <Appenders>
+        <!-- console -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd hh:mm:ss} %5p [%c] %m%n"/>
+        </Console>
+    </Appenders>
+
+    <loggers>
+        <root level="info" additivity="true">
+            <AppenderRef ref="console"/>
+        </root>
+
+        <logger name="org.example" level="info" additivity="false">
+            <AppenderRef ref="console"/>
+        </logger>
+
+        <logger name="org.example.dao" level="debug" additivity="false"> <!-- 패키지 확인하기 -->
+            <AppenderRef ref="console"/> <!-- console에다가 출력할거야 -->
+        </logger>
+    </loggers>
+
+</configuration>
