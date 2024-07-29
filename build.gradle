@@ -14,8 +14,9 @@ ext {
     junitVersion = '5.10.0'
 }
 
-sourceCompatibility = '11'
-targetCompatibility = '11'
+sourceCompatibility = '17'
+targetCompatibility = '17'
+//db의 """ 이거를 쓰기 위해서 17로 변경할거임(TodoDAO). 7/26
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -40,6 +41,11 @@ dependencies {
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
 
     implementation 'org.mariadb.jdbc:mariadb-java-client:3.3.3'
+
+    implementation 'org.slf4j:slf4j-simple:2.0.13'
+
+    implementation 'com.zaxxer:HikariCP:5.0.1'
+
 }
 
 test {
